@@ -39,6 +39,61 @@ def main():
     def button_clear():
         expression.delete(0, END)
         
+    # Addition
+    def button_add():
+        first_number = expression.get()
+        global X
+        global operation
+        operation = "addition"
+        X = int(first_number)
+        expression.delete(0, END)
+        
+    # Substraction
+    def button_sub():
+        first_number = expression.get()
+        global X
+        global operation
+        operation = "substraction"
+        X = int(first_number)
+        expression.delete(0, END)
+        
+    # Multiplication
+    def button_multp():
+        first_number = expression.get()
+        global X
+        global operation
+        operation = "multiplication"
+        X = int(first_number)
+        expression.delete(0, END)
+        
+    # Division
+    def button_div():
+        first_number = expression.get()
+        global X
+        global operation
+        operation = "division"
+        X = int(first_number)
+        expression.delete(0, END)
+        
+    # Results
+    def button_equal():
+        Y = expression.get()
+        error_message = "ERROR"
+        expression.delete(0, END)
+        try:
+            if operation == "addition":
+                result = X + int(Y)
+            elif operation == "substraction":
+                result = X - int(Y)
+            elif operation == "multiplication":
+                result = X * int(Y)
+            else:
+                result = X / int(Y)
+            expression.insert(0, result)
+        except ZeroDivisionError:
+            expression.insert(0, error_message)
+    
+    
     # Buttons
     button_1 = Button(
         window,
@@ -171,6 +226,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=button_add
     )
     button_minus = Button(
         window,
@@ -181,6 +237,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=button_sub
     )
     button_multp = Button(
         window,
@@ -191,6 +248,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=button_multp
     )
     button_div = Button(
         window,
@@ -201,6 +259,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=button_div
     )
     button_equal = Button(
         window,
@@ -212,6 +271,7 @@ def main():
         font=("Arial", 10, "bold"),
         cursor="hand2",
         activebackground=active_button,
+        command=button_equal
     )
 
     # Place the buttons
