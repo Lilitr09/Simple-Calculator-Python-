@@ -3,14 +3,19 @@ from tkinter import *
 
 def main():
     # Layout
+    # Colors
+    background = "#332f2f"
+    buttons = "#878383"
     # Main window
     window = Tk()
     window.title("Calculadora")
-    window.geometry("360x390")
+    window.geometry("360x420")
+    window.configure(bg=background)
 
     # Structure
     title = Label(
-        window, text="Mi Calculadora", font=("Arial", 16, "bold")
+        window, text="Mi Calculadora", font=("Arial", 30, "bold"),
+        bg=background, fg="white"
     )  # Change this later!!
     title.grid(row=0, column=0, columnspan=4)
 
@@ -19,22 +24,22 @@ def main():
     expression.grid(row=1, column=0, columnspan=4)
 
     # Buttons
-    button_1 = Button(window, text=1, padx=36, pady=20)
-    button_2 = Button(window, text=2, padx=36, pady=20)
-    button_3 = Button(window, text=3, padx=36, pady=20)
-    button_4 = Button(window, text=4, padx=36, pady=20)
-    button_5 = Button(window, text=5, padx=36, pady=20)
-    button_6 = Button(window, text=6, padx=36, pady=20)
-    button_7 = Button(window, text=7, padx=36, pady=20)
-    button_8 = Button(window, text=8, padx=36, pady=20)
-    button_9 = Button(window, text=9, padx=36, pady=20)
-    button_0 = Button(window, text=0, padx=36, pady=20)
-    button_clear = Button(window, text="borrar", padx=69, pady=20)
-    button_plus = Button(window, text="+", padx=36, pady=20)
-    button_minus = Button(window, text="-", padx=36, pady=20)
-    button_multp = Button(window, text="*", padx=36, pady=20)
-    button_div = Button(window, text="/", padx=36, pady=20)
-    button_equal = Button(window, text="=", padx=170, pady=20)
+    button_1 = Button(window, text=1, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_2 = Button(window, text=2, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_3 = Button(window, text=3, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_4 = Button(window, text=4, padx=39, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_5 = Button(window, text=5, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_6 = Button(window, text=6, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_7 = Button(window, text=7, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_8 = Button(window, text=8, padx=39, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_9 = Button(window, text=9, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_0 = Button(window, text=0, padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_clear = Button(window, text="borrar", padx=69, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_plus = Button(window, text="+", padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_minus = Button(window, text="-", padx=36, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_multp = Button(window, text="*", padx=39, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_div = Button(window, text="/", padx=39, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
+    button_equal = Button(window, text="=", padx=173, pady=20, bg=buttons, fg="white", font=("Arial", 10 ,"bold"))
 
     # Place the buttons
     button_1.grid(row=2, column=0)
