@@ -27,6 +27,18 @@ def main():
     expression.configure(font=("Arial", 24))
     expression.grid(row=1, column=0, columnspan=4)
 
+    # Functionality
+    # Click buttons
+    def button_click(number):
+        current = expression.get()
+        expression.delete(0, END)
+        expression.insert(0, str(current) + str(number))
+        return
+    
+    # Delete
+    def button_clear():
+        expression.delete(0, END)
+        
     # Buttons
     button_1 = Button(
         window,
@@ -37,6 +49,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(1)
     )
     button_2 = Button(
         window,
@@ -47,6 +60,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(2)
     )
     button_3 = Button(
         window,
@@ -57,6 +71,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(3)
     )
     button_4 = Button(
         window,
@@ -67,6 +82,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(4)
     )
     button_5 = Button(
         window,
@@ -77,6 +93,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(5)
     )
     button_6 = Button(
         window,
@@ -87,6 +104,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(6)
     )
     button_7 = Button(
         window,
@@ -97,6 +115,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(7)
     )
     button_8 = Button(
         window,
@@ -107,6 +126,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(8)
     )
     button_9 = Button(
         window,
@@ -117,6 +137,7 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(9)
     )
     button_0 = Button(
         window,
@@ -127,10 +148,11 @@ def main():
         fg="white",
         font=("Arial", 10, "bold"),
         cursor="hand2",
+        command=lambda: button_click(0)
     )
     button_clear = Button(
         window,
-        text="borrar",
+        text="Borrar",
         padx=69,
         pady=20,
         bg=buttons,
@@ -138,6 +160,7 @@ def main():
         font=("Arial", 10, "bold"),
         cursor="hand2",
         activebackground=active_button,
+        command=button_clear
     )
     button_plus = Button(
         window,
@@ -208,6 +231,8 @@ def main():
     button_multp.grid(row=5, column=2)
     button_div.grid(row=5, column=3)
     button_equal.grid(row=6, column=0, columnspan=4)
+    
+        
 
     # Start the application
     window.mainloop()
