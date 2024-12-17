@@ -12,6 +12,7 @@ def main():
     window.title("Calculadora")
     window.geometry("360x420")
     window.configure(bg=background)
+    window.iconbitmap("C:/Users/Lisbeth/Documents/Python/Calculadora/icon.ico")
 
     # Structure
     title = Label(
