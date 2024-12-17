@@ -13,6 +13,7 @@ def main():
     window.geometry("360x420")
     window.configure(bg=background)
     window.iconbitmap("C:/Users/Lisbeth/Documents/Python/Calculadora/icon.ico")
+    window.resizable(False, False)
 
     # Structure
     title = Label(
