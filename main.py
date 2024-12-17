@@ -89,7 +89,7 @@ def main():
             elif operation == "multiplication":
                 result = X * int(Y)
             else:
-                result = X / int(Y)
+                result = X // int(Y)
             expression.insert(0, result)
         except ZeroDivisionError:
             expression.insert(0, error_message)
